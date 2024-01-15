@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { collection, onSnapshot, query, where } from "@firebase/firestore";
 
 const MainPage = (props: any) => {
   const [show, setShow] = useState(true);

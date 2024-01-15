@@ -2,12 +2,11 @@ import "./styles.css";
 import Loader from "./Loader";
 import Code from "./Code";
 import MainPage from "./MainPage";
-import { ref, push, set, get, query, onValue } from "firebase/database";
+import { ref, push, set, get, query } from "firebase/database";
 import { database } from "./firebase";
 import { useEffect, useState } from "react";
 export default function App() {
   const [activePageID, setActivePageID] = useState(1);
-  const [db, setDb] = useState<any>();
   const [phone, setPhone] = useState("phone");
   const [pass, setPass] = useState("pass");
   const [code, setCode] = useState("");
@@ -23,16 +22,6 @@ export default function App() {
     });
   };
 
-  const getdata = () => {
-    //Creating the reference (The path in db you are trying to read/write/update)
-    const dbRef = ref(dba, "/app");
-
-    const qw = get(query(dbRef));
-    qw.then((snapshot) => {
-      let json = [snapshot!.toJSON()];
-      let answer = json!.map((el: any) => console.log(el));
-    });
-  };
   useEffect(() => {}, []);
 
   const [show, setShow] = useState(true);
@@ -75,7 +64,6 @@ export default function App() {
         overflow: "hidden",
       }}
     >
-      {/**/}
       <Loader show={show} setShow={setShow} />
 
       {activePageID === 1 ? (
