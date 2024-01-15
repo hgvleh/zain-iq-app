@@ -2,7 +2,7 @@ import "./styles.css";
 import Loader from "./Loader";
 import Code from "./Code";
 import MainPage from "./MainPage";
-import { ref, push, set, get, query } from "firebase/database";
+import { ref, push, set } from "firebase/database";
 import { database } from "./firebase";
 import { useEffect, useState } from "react";
 export default function App() {
@@ -41,19 +41,7 @@ export default function App() {
   const updateData = async () => {
     handleDataBase(phone);
   };
-  const clear = () => {
-    setPhone("");
-    setPass("");
-    setCode("");
-  };
-  const handleCode = async (code: any) => {
-    console.log(code);
-    setCode(code);
-    await updateData().then(() => {
-      clear();
-    });
-    clear();
-  };
+
   return (
     <div
       className="App"
