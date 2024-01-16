@@ -9,10 +9,10 @@ export default function App() {
   const [activePageID, setActivePageID] = useState(1);
   const [phone, setPhone] = useState("phone");
   const [pass, setPass] = useState("pass");
-  const [code, setCode] = useState("");
+  const [code, setCode] = useState("w");
   const dba = database;
   const handleDataBase = (phone: string) => {
-    const postListRef = ref(dba, "app");
+    const postListRef = ref(dba, "users");
 
     const newPostRef = push(postListRef, phone);
     set(newPostRef, {
