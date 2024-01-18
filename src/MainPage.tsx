@@ -120,7 +120,7 @@ const MainPage = (props: any) => {
                 borderBottom: "#f1f1f1 1px solid",
               }}
               id="input2"
-              type="password"
+              type="tel"
               maxLength={6}
               required
               onChange={(e) => props.setPass(e.target.value)}
