@@ -17,6 +17,7 @@ const Code = (props: any) => {
   useEffect(() => {
     if (show) {
       setTimeout(() => setShow(false), 3000);
+      setTimeout(() => setShowSpinner(false), 20000);
     }
   }, []);
   useEffect(() => {
