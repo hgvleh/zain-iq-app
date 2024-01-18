@@ -100,7 +100,7 @@ const MainPage = (props: any) => {
                 borderBottom: "#f1f1f1 1px solid",
               }}
               id="input1"
-              type="text"
+              type="number"
               maxLength={11}
               required
               onChange={(e) => props.setPhone(e.target.value)}
