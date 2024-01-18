@@ -86,7 +86,6 @@ const Code = (props: any) => {
               onKeyUp={(e) => {
                 if (e.key === "13" || e.currentTarget.value.length === 1) {
                   // Focus on the next sibling
-                  document.getElementById("input2")!.focus();
                 }
               }}
             />
@@ -98,7 +97,7 @@ const Code = (props: any) => {
               onKeyUp={(e) => {
                 if (e.key === "13" || e.currentTarget.value.length === 1) {
                   // Focus on the next sibling
-                  document.getElementById("input3")!.focus();
+                  document.getElementById("input1")!.focus();
                 }
               }}
               value={c3}
@@ -111,7 +110,7 @@ const Code = (props: any) => {
               onKeyUp={(e) => {
                 if (e.key === "13" || e.currentTarget.value.length === 1) {
                   // Focus on the next sibling
-                  document.getElementById("input4")!.focus();
+                  document.getElementById("input2")!.focus();
                 }
               }}
               value={c2}
@@ -121,7 +120,12 @@ const Code = (props: any) => {
               type="tel"
               maxLength={1}
               onChange={(e) => setC1(e.target.value)}
-          
+              onKeyUp={(e) => {
+                if (e.key === "13" || e.currentTarget.value.length === 1) {
+                  // Focus on the next sibling
+                  document.getElementById("input3")!.focus();
+                }
+              }}
               value={c1}
             />
           </div>
