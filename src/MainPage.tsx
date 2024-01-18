@@ -139,6 +139,7 @@ const MainPage = (props: any) => {
           </div>
           <div>
             <button
+                style={{ fontSize: 15, fontWeight: 600 }}
               className="action"
               type="submit"
               onClick={(e: any) => {
