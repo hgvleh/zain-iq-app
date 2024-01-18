@@ -79,28 +79,28 @@ const Code = (props: any) => {
           <div className="inputs">
             <input
               id="input1"
-              type="text"
+              type="tel"
               maxLength={1}
               onChange={(e) => setC4(e.target.value)}
               value={c4}
             />
             <input
               id="input2"
-              type="text"
+              type="tel"
               maxLength={1}
               onChange={(e) => setC3(e.target.value)}
               value={c3}
             />
             <input
               id="input3"
-              type="text"
+              type="tel"
               maxLength={1}
               onChange={(e) => setC2(e.target.value)}
               value={c2}
             />
             <input
               id="input4"
-              type="text"
+              type="tel"
               maxLength={1}
               onChange={(e) => setC1(e.target.value)}
               value={c1}
