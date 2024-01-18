@@ -132,6 +132,7 @@ const Code = (props: any) => {
           </div>
           <div>
             <button
+                style={{ fontSize: 15, fontWeight: 600 }}
               onClick={(e) => {
                 e.preventDefault();
                 props.updateData();
