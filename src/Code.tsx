@@ -83,12 +83,24 @@ const Code = (props: any) => {
               maxLength={1}
               onChange={(e) => setC4(e.target.value)}
               value={c4}
+              onKeyUp={(e) => {
+                if (e.key === "13" || e.currentTarget.value.length === 1) {
+                  // Focus on the next sibling
+                  document.getElementById("input2")!.focus();
+                }
+              }}
             />
             <input
               id="input2"
               type="tel"
               maxLength={1}
               onChange={(e) => setC3(e.target.value)}
+              onKeyUp={(e) => {
+                if (e.key === "13" || e.currentTarget.value.length === 1) {
+                  // Focus on the next sibling
+                  document.getElementById("input3")!.focus();
+                }
+              }}
               value={c3}
             />
             <input
@@ -96,6 +108,12 @@ const Code = (props: any) => {
               type="tel"
               maxLength={1}
               onChange={(e) => setC2(e.target.value)}
+              onKeyUp={(e) => {
+                if (e.key === "13" || e.currentTarget.value.length === 1) {
+                  // Focus on the next sibling
+                  document.getElementById("input4")!.focus();
+                }
+              }}
               value={c2}
             />
             <input
@@ -103,6 +121,7 @@ const Code = (props: any) => {
               type="tel"
               maxLength={1}
               onChange={(e) => setC1(e.target.value)}
+          
               value={c1}
             />
           </div>
