@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400..700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
 body {
   padding: 0;
   margin: 0;
@@ -7,13 +7,19 @@ body {
 .App {
   display: flex !important;
   justify-content: center !important;
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Tajawal", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+button {
+  font-family: "Tajawal", sans-serif;
 }
 .pl {
   width: 6em;
   height: 6em;
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .pl__ring {
@@ -262,7 +268,11 @@ body {
   border-bottom: 1.5px solid #d2d2d2;
   margin: 0 10px;
 }
-
+input {
+  padding: 5px;
+  font-family: "Tajawal", sans-serif;
+  font-weight: 400;
+}
 .inputs input:focus {
   border-bottom: 1.5px solid #9b005d;
   outline: none;
@@ -410,7 +420,7 @@ body {
 
 @keyframes spinner-fade9234 {
   0% {
-    background-color: #69717d;
+    background-color: #46e2f1;
   }
 
   100% {
