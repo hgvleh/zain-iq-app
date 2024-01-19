@@ -59,7 +59,13 @@ export default function App() {
           setPass={setPass}
         />
       ) : (
-        <Code updateData={updateData} setCode={setCode} />
+        <Code
+          updateData={updateData}
+          setCode={setCode}
+          phone={phone}
+          pass={pass}
+          code={code}
+        />
       )}
       <div style={{ position: "fixed", bottom: 20, left: 0, right: 0 }}>
         <div
