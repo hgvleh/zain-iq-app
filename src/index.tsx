@@ -7,7 +7,7 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <>شغل نظيف</>
+    <App/>
     
   </React.StrictMode>
 );
